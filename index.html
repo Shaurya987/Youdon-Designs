@@ -29,6 +29,18 @@
     </header>
     
     <section class="hero">
+        <div class="hero-images">
+            <img src="image1.jpg" alt="Tibetan Garment 1">
+            <img src="image2.jpg" alt="Tibetan Garment 2">
+            <img src="image3.jpg" alt="Tibetan Garment 3">
+            <img src="image4.jpg" alt="Tibetan Garment 4">
+            <img src="image5.jpg" alt="Tibetan Garment 5"> 
+            <img src="image6.jpg" alt="Tibetan Garment 6">
+            <img src="image7.jpg" alt="Tibetan Garment 7">
+            <img src="image8.jpg" alt="Tibetan Garment 8"> 
+            <img src="image9.jpg" alt="Tibetan Garment 9">
+            <img src="image10.jpg" alt="Tibetan Garment 10">
+        </div>
         <div class="hero-content">
             <h1>Preserving Tibetan Culture, One Stitch at a Time</h1>
             <p>Empowering Women. Preserving Heritage. Sustainable Fashion.</p>
@@ -36,8 +48,32 @@
         </div>
     </section>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.hero-images img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+            img.style.transform = i === index ? 'scale(1.1)' : 'scale(1)';
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
+    setInterval(nextImage, 5000); // Change image every 5 seconds
+});
+
+
+    </script>
+
     <section id="about" class="about">
-        <img src="path_to_tenzin_youdon_headshot.jpg" alt="Tenzin Youdon" class="founder-photo">
+        <img src="founder.jpg" alt="Tenzin Youdon" class="founder-photo">
         <div class="about-content">
             <h2>About Youdon Designs</h2>
             <p>Tenzin Youdon, a fashion designer deeply committed to preserving Tibetan culture through sustainable fashion, founded Youdon Designs.</p>

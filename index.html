@@ -10,7 +10,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="path_to_logo.jpg" alt="Youdon Designs Logo">
+                <img src="logo .png" alt="Youdon Designs Logo">
             </div>
             <div class="menu-toggle">
                 <span class="bar"></span>
@@ -86,3 +86,13 @@
     </footer>
 </body>
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    });
+</script>

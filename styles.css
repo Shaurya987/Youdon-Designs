@@ -217,8 +217,22 @@ nav {
 /* About Section */
 /* General Reset for Background */
 #about {
-    background-color: black; /* Ensure no background color */
-    padding: 50px 20px; /* Adjust padding as needed */
+    background: url('about.jpg') no-repeat center center/cover; /* Add your background image */
+    padding: 50px 20px;
+    position: relative;
+    color: white;
+}
+
+/* Overlay for better text visibility */
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
 }
 
 /* Ensure Content is Centered */
@@ -227,29 +241,50 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    z-index: 2; /* Keep content above overlay */
 }
 
 /* Founder Photo Styling */
 .founder-photo {
-    width: 150px;
+    width: 180px;
     height: auto;
     border-radius: 50%;
     margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2); /* Stronger shadow for depth */
+    border: 5px solid white; /* Clean border to highlight the photo */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth transitions */
 }
 
-/* About Content Styling */
-.about-content {
-    max-width: 800px; /* Optional: to limit text width for readability */
+.founder-photo:hover {
+    transform: scale(1.15); /* Slightly enlarge on hover */
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4); /* More intense shadow on hover */
 }
 
-.about-content h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    #about {
+        padding: 30px 15px;
+    }
+    
+    .about {
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+
+    .founder-photo {
+        width: 140px; /* Smaller size for mobile */
+    }
 }
 
-.about-content p {
-    font-size: 1.1em;
-    line-height: 1.6;
+/* Media Query for Small Mobile Devices */
+@media only screen and (max-width: 480px) {
+    #about {
+        padding: 20px 10px;
+    }
+
+    .founder-photo {
+        width: 120px; /* Even smaller size for small mobile devices */
+    }
 }
 
 /* What We Do Section */
